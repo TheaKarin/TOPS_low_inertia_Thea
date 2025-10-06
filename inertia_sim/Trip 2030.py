@@ -6,6 +6,8 @@ This should be seen in combination with the script init_N45.py, which is used to
 
 
 if __name__ == '__main__':
+    import sys
+    sys.path.append('/Users/theathormodsen/Library/Mobile Documents/com~apple~CloudDocs/Masteroppgave/Kode og simulering/TOPS_low_inertia_Thea/src')
     #This code is used to generate a fault on the NorLink cable and test the system response.
     #The fault is a reversal of power flow on the cable, which leads to a fault of 1675MW. 
     import init_N45 as init

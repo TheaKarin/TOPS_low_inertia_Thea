@@ -7,6 +7,11 @@ The implementation of the plotting functions is done in the Plot_n45.py script.
 '''
 
 
+""" THEA: 
+I get KeyError: 't' which I think is the reason why the plotting doesn't work. Tried to comment in line
+195-198 but then I get the KeyError: 'gen_speed'. Have to find out what this bug is.
+"""
+
 import numpy as np 
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
@@ -33,7 +38,7 @@ def read_to_file(result, file_path):
             if isinstance(item, np.ndarray): #check if item is a numpy array
                 result[key][i] = item.tolist()
     
-    #Convert comeplex numbers to strings
+    #Convert complex numbers to strings
     for key, value in result.items():
         try:
             if (isinstance(value[0][0], complex)): #check if item is a complex number
@@ -143,19 +148,19 @@ def plot_freq(results, file_names, rocof=False, scenario = None, gen = None):
         If True, plot ROCOF. Default is False.
 
     """
-    # plt.rcParams.update({
+    plt.rcParams.update({
 
-    #     "font.family": "Dejavu serif",
+        "font.family": "Dejavu serif",
 
-    #     "font.serif": ["Computer Modern Roman"],
-    #     "font.size": 12,           # Default font size
-    #     "axes.titlesize": 14,      # Font size for axes titles
-    #     "axes.labelsize": 14,      # Font size for x and y labels
-    #     "xtick.labelsize": 12,     # Font size for x tick labels
-    #     "ytick.labelsize": 12,     # Font size for y tick labels
-    #     "legend.fontsize": 12,     # Font size for legend
-    #     "figure.titlesize": 16     # Font size for figure title
-    # })
+        "font.serif": ["Computer Modern Roman"],
+        "font.size": 12,           # Default font size
+        "axes.titlesize": 14,      # Font size for axes titles
+        "axes.labelsize": 14,      # Font size for x and y labels
+        "xtick.labelsize": 12,     # Font size for x tick labels
+        "ytick.labelsize": 12,     # Font size for y tick labels
+        "legend.fontsize": 12,     # Font size for legend
+        "figure.titlesize": 16     # Font size for figure title
+    })
 
     #Plot frequency
     if gen is not None:
@@ -188,10 +193,10 @@ def plot_freq(results, file_names, rocof=False, scenario = None, gen = None):
         plt.figure()
         it = 0  
         for res in results:
-            # freq =[]
-            # for timestep in res['gen_speed']:
+            #freq =[]
+            #for timestep in res['gen_speed']:
             #     freq.append(50 + 50*timestep[-6])
-            # plt.plot(res['t'], freq, label = file_names[it].stem)
+            #plt.plot(res['t'], freq, label = file_names[it].stem)
             if file_names[it].stem[0] == '0':
                 plt.plot(res['t'], 50 + 50*np.mean(res['gen_speed'], axis=1), label = file_names[it].stem[1:])
             else:

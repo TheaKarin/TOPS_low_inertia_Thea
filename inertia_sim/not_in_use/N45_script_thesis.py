@@ -44,7 +44,7 @@ if __name__ == '__main__':
     # print('Data from Transparency:\n',ENTSOE_gen_data)
     # Load model
     #import tops.ps_models.n45_with_controls_adapted as model_data
-    import tops.ps_models.n45_with_controls as model_data
+    import tops.ps_models.n45_2_0 as model_data
     model = model_data.load()
     # ------------------------------ Reparameterization to fit specific time-senario -----------------------------------
     index_area = model['buses'][0].index('Area')

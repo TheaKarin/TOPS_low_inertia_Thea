@@ -25,6 +25,8 @@ import numpy as np
 
 from FFR import activate_FFR,activate_FFR_load,activate_FFR_vsc
 
+#with open("Results/test.json", "w") as f:
+#    f.write("{}")
 
 def gen_trip(ps,folderandfilename, fault_bus = '7000',fault_Sn = 1400,fault_P = 1400,kinetic_energy_eps = 300e3,
              t=0,t_end=50,t_trip = 17.6,event_flag = True,VSC=False, FFR = False, FFR_vsc_names = None):
