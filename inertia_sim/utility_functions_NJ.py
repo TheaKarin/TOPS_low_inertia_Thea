@@ -176,7 +176,8 @@ def plot_freq(results, file_names, rocof=False, scenario = None, gen = None):
         if scenario == 'NordLink':
             #This is used to plot the real frequency data from the NordLink case
             from plot_NordLink_data import import_NordLink_data
-            from config import system_path
+            #from config import system_path
+            system_path = "/Users/theathormodsen/Library/Mobile Documents/com~apple~CloudDocs/Masteroppgave/Kode og simulering/TOPS_low_inertia_Thea"
             path = system_path+'inertia_sim/N45_case_data_NordLink/Case-Norlink.xlsx'
             data = import_NordLink_data(path)
 
@@ -206,7 +207,8 @@ def plot_freq(results, file_names, rocof=False, scenario = None, gen = None):
         if scenario == 'NordLink':
             #This is used to plot the real frequency data from the NordLink case
             from plot_NordLink_data import import_NordLink_data
-            from config import system_path
+            #from config import system_path
+            system_path = "/Users/theathormodsen/Library/Mobile Documents/com~apple~CloudDocs/Masteroppgave/Kode og simulering/TOPS_low_inertia_Thea"
             path = system_path+'inertia_sim/N45_case_data_NordLink/Case-Norlink.xlsx'
             data = import_NordLink_data(path)
 

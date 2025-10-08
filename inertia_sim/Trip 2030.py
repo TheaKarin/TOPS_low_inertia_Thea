@@ -73,7 +73,7 @@ if __name__ == '__main__':
     The function simulates a fault on the NorLink cable and stores the results in the specified folder and filename as a .json file.
     There has to be a folder with the same name as the first part of folderandfilename in the Results folder.
     '''
-    fault.HVDC_cable_trip(ps=ps,folderandfilename = 'SC/3x150MVA',
+    fault.HVDC_cable_trip(ps=ps,folderandfilename = 'SC/3x150MVA_with_SC',
                             event_flag=True)
     # fault.HVDC_cable_trip(ps=ps,folderandfilename = 'Frequency support from Wind activation time/49.5Hz activation', 
     #                         event_flag=True, FFR_sources=['WG3000-1','WG5120-1','WG7000-1'])

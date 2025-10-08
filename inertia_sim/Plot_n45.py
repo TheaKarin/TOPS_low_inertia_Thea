@@ -6,7 +6,8 @@ The results are stored in .json files, which are read and plotted using the func
 '''
 if __name__ == '__main__':  
     import sys
-    from config import system_path
+    #from config import system_path
+    system_path = "/Users/theathormodsen/Library/Mobile Documents/com~apple~CloudDocs/Masteroppgave/Kode og simulering/TOPS_low_inertia_Thea"
     sys.path.append(system_path)
     import utility_functions_NJ as uf
     import matplotlib.pyplot as plt
@@ -29,7 +30,7 @@ if __name__ == '__main__':
     The subfolder of Results are a folder containing the different result .json files.
     '''
     # folder_path = system_path + 'Results/Real inertia vs SI/'
-    folder_path = system_path + 'Results/Summary/'
+    folder_path = system_path + '/Results/Summary/'
 
     # The results and file_names variables are used to store the results and file names of the .json files in the folder.
     results, file_names = uf.format_results(folder_path)
