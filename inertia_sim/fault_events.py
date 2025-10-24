@@ -64,7 +64,6 @@ def gen_trip(ps,folderandfilename, fault_bus = '7000',fault_Sn = 1400,fault_P = 
 
 
 
-
     x_0 = ps.x_0.copy()
 
     # Solver
