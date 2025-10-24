@@ -258,4 +258,4 @@ def HVDC_cable_trip(ps,folderandfilename,t=0,t_end=50,t_trip = 10.81,event_flag 
     print('Simulation completed in {:.2f} seconds.'.format(time.time() - t_0))
 
     # Store the results in a JSON file
-    uf.read_to_file(res, 'Results/'+folderandfilename+'.json')
+    uf.read_to_file(res, 'results/'+folderandfilename+'.json')

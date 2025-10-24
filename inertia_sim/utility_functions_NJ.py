@@ -7,10 +7,6 @@ The implementation of the plotting functions is done in the Plot_n45.py script.
 '''
 
 
-""" THEA: 
-I get KeyError: 't' which I think is the reason why the plotting doesn't work. Tried to comment in line
-195-198 but then I get the KeyError: 'gen_speed'. Have to find out what this bug is.
-"""
 
 import numpy as np 
 import matplotlib.pyplot as plt
@@ -177,7 +173,7 @@ def plot_freq(results, file_names, rocof=False, scenario = None, gen = None):
             #This is used to plot the real frequency data from the NordLink case
             from plot_NordLink_data import import_NordLink_data
             #from config import system_path
-            system_path = "/Users/theathormodsen/Library/Mobile Documents/com~apple~CloudDocs/Masteroppgave/Kode og simulering/TOPS_low_inertia_Thea"
+            system_path = "/Users/theathormodsen/Library/Mobile Documents/com~apple~CloudDocs/Masteroppgave/Kode og simulering/TOPS_low_inertia_Thea/"
             path = system_path+'inertia_sim/N45_case_data_NordLink/Case-Norlink.xlsx'
             data = import_NordLink_data(path)
 
@@ -208,7 +204,7 @@ def plot_freq(results, file_names, rocof=False, scenario = None, gen = None):
             #This is used to plot the real frequency data from the NordLink case
             from plot_NordLink_data import import_NordLink_data
             #from config import system_path
-            system_path = "/Users/theathormodsen/Library/Mobile Documents/com~apple~CloudDocs/Masteroppgave/Kode og simulering/TOPS_low_inertia_Thea"
+            system_path = "/Users/theathormodsen/Library/Mobile Documents/com~apple~CloudDocs/Masteroppgave/Kode og simulering/TOPS_low_inertia_Thea/"
             path = system_path+'inertia_sim/N45_case_data_NordLink/Case-Norlink.xlsx'
             data = import_NordLink_data(path)
 

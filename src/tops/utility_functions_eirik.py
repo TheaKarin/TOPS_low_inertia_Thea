@@ -186,7 +186,7 @@ def add_virtual_gen(model,fault_bus, fault_P, fault_Sn):
 
 def load_to_disconnect(model, load_name: str):
     '''
-    Moving load to virtual buss to disconnect that single load
+    Moving load to virtual bus to disconnect that single load
         model: network model (N45)
         fault_bus: bus where faulty load is located
         load_name: name of load

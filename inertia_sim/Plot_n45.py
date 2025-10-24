@@ -30,7 +30,8 @@ if __name__ == '__main__':
     The subfolder of Results are a folder containing the different result .json files.
     '''
     # folder_path = system_path + 'Results/Real inertia vs SI/'
-    folder_path = system_path + '/Results/Summary/'
+    #folder_path = system_path + '/results/Summary/'
+    folder_path= system_path + '/results/Frequency support from Wind activation time/'
 
     # The results and file_names variables are used to store the results and file names of the .json files in the folder.
     results, file_names = uf.format_results(folder_path)
@@ -42,21 +43,21 @@ if __name__ == '__main__':
     Below are some examples of the plot functions that can be used, and their initialization.
     '''
     
-    # uf.plot_freq(results, file_names, scenario = 'NordLink')
-    uf.plot_freq(results, file_names)
+    #uf.plot_freq(results, file_names, scenario = 'NordLink')
+    #uf.plot_freq(results, file_names)
     # uf.plot_freq(results, file_names,rocof=True)
     # uf.plot_freq(results, file_names, gen='G5230-1',rocof=True)
-    # uf.plot_freq(results, file_names, gen='G7000-1',scenario='NordLink')
+    #uf.plot_freq(results, file_names, gen='G7000-1',scenario='NordLink')
     # uf.plot_power_load(results, file_names,'L3000-1')
     # uf.plot_voltage(results, file_names, complex(5110,0))
     # results, file_names = uf.format_results(folder_path2)
     # uf.plot_freq(results, file_names)
     # uf.plot_gen(results, file_names)
-    # uf.plot_gen_power(results, file_names, 'G5120-1')
+    uf.plot_gen_power(results, file_names, 'G5120-1')
     # uf.plot_gen_power(results, file_names, 'SC5230-1')
     # uf.plot_gen_power(results, file_names, 'SC5230-2')
     # uf.plot_gen_power(results, file_names, 'SC5240-1')
-    # uf.plot_gen_speed(results, file_names, 'G5240-1')
+    uf.plot_gen_speed(results, file_names, 'G5240-1')
     # uf.plot_gen_speed(results, file_names, 'G7000-1')
     # uf.plot_gen_speed(results, file_names, 'G7100-1')
     # uf.plot_load_freq(results, file_names, 'L5120-1')

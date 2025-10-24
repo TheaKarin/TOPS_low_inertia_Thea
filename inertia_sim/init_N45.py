@@ -68,7 +68,7 @@ def init_n45(model_data, data_path, energy_mix,display_pf=False, fault_bus = '70
     data_path = system_path + data_path
   
     #Accessing the case data and saving it in Dataframe format
-    ENTSOE_gen_data, ENTSOE_load_data, ENTSOE_exchange_data = MThesis.Import_data_ENTSOE(data_path)
+    ENTSOE_gen_data, ENTSOE_load_data, ENTSOE_exchange_data = uf.import_powerflow_data(data_path)
     # List of international power links: Should be updated if added links or using another model than N45
     international_links = {'L5230-1': 'NO_2-DE', 'L5240-2': 'NO_2-GB', 'L5210-1': 'NO_2-DK',
                            'L3360-1': 'SE_3-DK', 'L8600-1': 'SE_4-DK', 'L8700-1': 'SE_4-PL',
