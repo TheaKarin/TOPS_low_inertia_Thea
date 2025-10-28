@@ -20,7 +20,7 @@ importlib.reload(dps)
 
 
 import utility_functions_NJ as uf
-import tops.utility_functions_eirik as eirik
+import tops.utility_functions_eirik as MThesis
 import numpy as np 
 
 # general case (ps,model, gen_bus, t, t_end, ramp_start, ramp_end, P_start, P_end) 

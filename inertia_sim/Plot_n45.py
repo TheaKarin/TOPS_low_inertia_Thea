@@ -17,7 +17,7 @@ if __name__ == '__main__':
     plt.rcParams.update({
         "font.family": "Dejavu serif",
         "font.serif": ["Computer Modern Roman"],
-        "font.size": 72,           # Default font size
+        "font.size": 14,           # Default font size
         "axes.titlesize": 14,      # Font size for axes titles
         "axes.labelsize": 14,      # Font size for x and y labels
         "xtick.labelsize": 12,     # Font size for x tick labels
@@ -43,7 +43,7 @@ if __name__ == '__main__':
     Below are some examples of the plot functions that can be used, and their initialization.
     '''
     
-    uf.plot_freq(results, file_names, scenario = 'NordLink')
+    # uf.plot_freq(results, file_names, scenario = 'NordLink')
     # uf.plot_freq(results, file_names)
     # uf.plot_freq(results, file_names,rocof=True)
     # uf.plot_freq(results, file_names, gen='G5230-1',rocof=True)

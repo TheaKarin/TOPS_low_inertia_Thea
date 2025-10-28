@@ -9,6 +9,7 @@ importlib.reload(dps)
 import numpy as np
 import utility_functions_NJ as uf   
 from init_N45 import init_n45
+import tops.utility_functions_eirik as MThesis
 import tops.ps_models.copy_n45_2_0 as n45
 import ramp_down_gen as rdg
 
@@ -92,6 +93,7 @@ if __name__ == '__main__':
         res['gen_I'].append(ps.gen['GEN'].I(x, v).copy())
         res['gen_P'].append(ps.gen['GEN'].P_e(x, v).copy())
         res['gen_Q'].append(ps.gen['GEN'].Q_e(x, v).copy())
+        res['gen_speed'].append(ps.gen['GEN'].speed(x, v).copy())
         res['V'].append(v.copy())
         # res['V'].append(ps.gen['GEN'].v_t(x, v).copy())
         # res['V'].append(ps.gen['GEN'].v_setp(x, v).copy())

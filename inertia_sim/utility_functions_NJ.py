@@ -443,7 +443,7 @@ def plot_power_load(results, file_names, load_name=None):
         else:
             for load in res['load_name'][0]:
                 plt.plot(res['t'], np.array(res['load_P'])[:, res['load_name'][0].index(load)], label=load)
-    plt.xlim(10, max(res['t']))  # Start x-axis at 10s
+    plt.xlim(0, max(res['t']))  # Start x-axis at 10s
     plt.xlabel('Time [s]')
     plt.ylabel('Power [MW]')
     plt.grid()
