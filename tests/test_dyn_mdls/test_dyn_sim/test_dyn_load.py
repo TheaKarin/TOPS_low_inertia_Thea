@@ -47,8 +47,8 @@ if __name__ == '__main__':
         res['time'].append(t)
         res['load_P'].append(ps.loads['DynamicLoad'].p(x, v)[0])
 
-    # plt.plot(res['time'], res['load_P'])
-    # plt.show()
+    plt.plot(res['time'], res['load_P'])
+    plt.show()
 
     assert np.linalg.norm(ps.loads['DynamicLoad'].y_load(x, v).real - [1, 2]) < 1e-2
     assert np.linalg.norm(ps.loads['DynamicLoad'].y_load(x, v).imag - [-0.1, -0.1]) < 1e-2

@@ -24,7 +24,7 @@ import tops.utility_functions_eirik as eirik
 import numpy as np 
 
 # general case (ps,model, gen_bus, t, t_end, ramp_start, ramp_end, P_start, P_end) 
-def ramp_down_one_gen(ps,model, gen_bus= 'G5240-1', t= 0, t_end = 9, ramp_start= 5, ramp_end= 8, P_start= 300, P_end= 0): #spesific case to help with logic
+def ramp_down_one_gen(ps,model, folderandfilename, gen_bus , t , t_end, ramp_start, ramp_end, P_start, P_end): #spesific case to help with logic
     '''
     Simulates a ramp down of a generator in the Nordic 45 system.
     Parameters:
@@ -63,6 +63,7 @@ def ramp_down_one_gen(ps,model, gen_bus= 'G5240-1', t= 0, t_end = 9, ramp_start=
     t_0 = time.time()
 
     while t < t_end:
+        sys.stdout.write("\r%d%%" % (t/(t_end)*100))
         if t < ramp_start:
             #P_gen = ps.gen['GEN'].par['P']
             P_gen = P_start
@@ -88,6 +89,8 @@ def ramp_down_one_gen(ps,model, gen_bus= 'G5240-1', t= 0, t_end = 9, ramp_start=
         res['gen_P'].append(ps.gen['GEN'].P_e(x, v).copy())
         res['load_P'].append(ps.loads['Load'].P(x, v).copy())
         res['load_Q'].append(ps.loads['Load'].Q(x, v).copy())
+    
+    print('Simulation completed in {:.2f} seconds.'.format(time.time() - t_0))
+    uf.read_to_file(res, 'results/'+folderandfilename+'.json')
 
-
-    return
+    #return
