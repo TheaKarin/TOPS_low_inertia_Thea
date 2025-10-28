@@ -2,6 +2,10 @@ import sys
 from collections import defaultdict
 import matplotlib.pyplot as plt
 import time
+# Add src directory to Python path
+import os
+sys.path.append(os.path.join(os.path.dirname(os.path.dirname(__file__)), 'src'))
+
 import tops.dynamic as dps
 import tops.solvers as dps_sol
 import importlib
@@ -42,9 +46,12 @@ if __name__ == '__main__':
                 'SE_4': {'Wind': 0.95, 'Hydro': 0.05, 'Nuclear': 0.0, 'Solar': 0.0, 'Fossil': 0.0}}
     
     ps = init_n45(model_data=n45,display_pf=False,energy_mix= energy_mix, 
-                       data_path= 'inertia_sim/N45_case_data_NordLink/',
+                       data_path= 'inertia_sim/N45_case_data_NordLink/', fault_bus = None, fault_Sn = None,
+                       fault_P = None, kinetic_energy_eps = None,
                        virtual_gen=False,spinning_reserve=1.2)
     
+    #(model_data, data_path, energy_mix,display_pf=False, fault_bus = '7000',fault_Sn = 1400,
+    #fault_P = 1400,kinetic_energy_eps = None,virtual_gen = False, spinning_reserve = 1.2):
     
     model= ps.model.copy()
     gen = model['gen']['GEN']
