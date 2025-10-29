@@ -148,13 +148,44 @@ def concatenate_structured_arrays(a_list):
 
 
 def structured_array_from_list(names, entries):
-    entries_T = list(map(list, zip(*entries)))
-    col_dtypes = [np.array(col).dtype for col in entries_T]
+    # Normalize entries into tuples that match the provided names (header).
+    entries_tup = []
+    for entry in entries:
+        # Structured numpy scalar (has dtype with field names)
+        if hasattr(entry, 'dtype') and getattr(entry.dtype, 'names', None) is not None:
+            try:
+                tup = tuple(entry[name] for name in names)
+            except Exception:
+                # If some fields missing, raise informative error
+                raise ValueError(f"Structured entry is missing one of the fields: {names}")
+            entries_tup.append(tup)
+        else:
+            # Assume sequence-like (list/tuple/1D-array)
+            seq = tuple(entry)
+            if len(seq) == len(names):
+                entries_tup.append(seq)
+            elif len(seq) > len(names):
+                # Truncate extra items (keeps compatibility with some inputs)
+                entries_tup.append(tuple(seq[:len(names)]))
+            else:
+                raise ValueError(f"Entry {entry} has length {len(seq)} but header has {len(names)} fields: {names}")
 
-    entries_tup = [tuple(entry) for entry in entries]
+    # Determine dtypes from the normalized tuples
+    if len(entries_tup) == 0:
+        # No data rows: default to object dtype for safety
+        col_dtypes = [object] * len(names)
+    else:
+        entries_T = list(map(list, zip(*entries_tup)))
+        col_dtypes = [np.array(col).dtype for col in entries_T]
+    
+        #entries_T = list(map(list, zip(*entries))) #old code
+        #col_dtypes = [np.array(col).dtype for col in entries_T] #old code
+
+        #entries_tup = [tuple(entry) for entry in entries] #old code
     dtypes = [(name_, dtype_) for name_, dtype_ in zip(names, col_dtypes)]
 
     return np.array(entries_tup, dtype=dtypes)
+
 
 
 def lookup_strings(a, b, return_mask=False):

@@ -15,7 +15,7 @@ import utility_functions_NJ as uf
 from init_N45 import init_n45
 import tops.utility_functions_eirik as MThesis
 import tops.ps_models.copy_n45_2_0 as n45
-import ramp_down_gen as rdg
+import inertia_sim.not_in_use.ramp_down_gen as rdg
 
 if __name__ == '__main__':
 
@@ -79,16 +79,17 @@ if __name__ == '__main__':
 
     while t < t_end:
         sys.stdout.write("\r%d%%" % (t/(t_end)*100))
-        if t < t_ramp1:
+        if t > t_ramp1:
             rdg.ramp_down_one_gen(ps, ps.model, folderandfilename, gen_bus='G5240-1', t=0, t_end=t_end, 
                        ramp_start=t_ramp1, ramp_end=ramp_end1, P_start=700, P_end= 0)
-        if t < t_ramp2:
+        if t > t_ramp2:
             rdg.ramp_down_one_gen(ps, ps.model, folderandfilename, gen_bus='G5240-2', t=0, t_end=t_end, 
                       ramp_start=t_ramp2, ramp_end=ramp_end2, P_start=700, P_end= 0)
-        if t < t_ramp3:
+        if t > t_ramp3:
             rdg.ramp_down_one_gen(ps, ps.model, folderandfilename, gen_bus='G5240-3', t=0, t_end=t_end, 
                       ramp_start=t_ramp3, ramp_end=ramp_end3, P_start=700, P_end= 0)
-        result = sol.step(t)
+        
+        result = sol.step()
         x = sol.y
         v = sol.v
         t = sol.t
@@ -105,8 +106,8 @@ if __name__ == '__main__':
         # res['V'].append(ps.gen['GEN'].v_t(x, v).copy())
         # res['V'].append(ps.gen['GEN'].v_setp(x, v).copy())
 
-        res['load_P'].append(ps.loads['DynamicLoad2'].P(x, v).copy())
-        res['load_Q'].append(ps.loads['DynamicLoad2'].Q(x, v).copy())
+        res['load_P'].append(ps.loads['Load'].P(x, v).copy())
+        res['load_Q'].append(ps.loads['Load'].Q(x, v).copy())
 
 
     print('Simulation completed in {:.2f} seconds.'.format(time.time() - t_0))

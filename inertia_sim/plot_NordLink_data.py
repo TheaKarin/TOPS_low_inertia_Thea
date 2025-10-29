@@ -1,6 +1,8 @@
 import pandas as pd 
 import matplotlib.pyplot as plt
+import sys
 from config import system_path
+sys.path.append(system_path)
 
 
 def import_NordLink_data(path):
@@ -25,6 +27,7 @@ def import_NordLink_data(path):
     return data
 
 if __name__ == '__main__':
+
 
     path = system_path+'inertia_sim/N45_case_data_NordLink/Case-Norlink.xlsx'
     data = import_NordLink_data(path)

@@ -152,6 +152,7 @@ def HVDC_cable_trip(ps,folderandfilename,t=0,t_end=50,t_trip = 10.81,event_flag 
             row.extend([5, 0.1])
         model['loads'] = {'DynamicLoad2': loads}
         ps = dps.PowerSystemModel(model=model)
+       
 
     ps.power_flow(print_output=True)
     ps.init_dyn_sim()

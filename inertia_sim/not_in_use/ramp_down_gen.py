@@ -73,7 +73,7 @@ def ramp_down_one_gen(ps,model, folderandfilename, gen_bus , t , t_end, ramp_sta
             # Linear ramp down of generator power
             P_gen = P_start + (P_end - P_start) * (t - ramp_start) / (ramp_end - ramp_start)
 
-        result = sol.step(t)
+        result = sol.step()
 
         x = sol.y
         v = sol.v

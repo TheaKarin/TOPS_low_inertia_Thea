@@ -7,12 +7,20 @@ import tops.solvers as dps_sol
 import importlib
 importlib.reload(dps)
 import numpy as np
+
+# Add src directory to Python path
+#import os
+#sys.path.append(os.path.join(os.path.dirname(os.path.dirname(__file__)), 'src'))
+
 import utility_functions_NJ as uf   
 from init_N45 import init_n45
 import tops.ps_models.n45_2_0 as n45
 
-if __name__ == '__main__':
 
+
+if __name__ == '__main__':
+    #import sys
+    sys.path.append('/Users/theathormodsen/Library/Mobile Documents/com~apple~CloudDocs/Masteroppgave/Kode og simulering/TOPS_low_inertia_Thea/src')
     folderandfilename = 'local_freq_tuning/K_est = 5'
     t_trip=10.81
     event_flag=True
