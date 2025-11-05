@@ -187,7 +187,7 @@ def load():
             ['L5220-1', '5220', 0.1, 0.1, 'Z'],
             # ['L5230-1', '5230', 1436, 50, 'Z'], #VSC
             ['L5231-1', '5231', 1099, 50, 'Z'],
-            ['L5240-1', '5240', 1099, 50, 'Z'], #Kvilldal load, endre den til full eksport på 1400MW?
+            ['L5240-1', '5240', 898, 50, 'Z'], #Kvilldal load
             ['L5240-2', '5240', 1300, 50, 'Z'], #VSC #Is this the HVDC transmission cable that goes from Kvilldal to GB?
             ['L5270-1', '5270', 461.2, 50, 'Z'],
             ['L5310-1', '5310', 773, 250, 'Z'],

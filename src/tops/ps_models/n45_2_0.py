@@ -181,7 +181,7 @@ def load():
             # ['L5230-1', '5230', 1436, 50, 'Z'], #VSC
             ['L5231-1', '5231', 1099, 50, 'Z'],
             ['L5240-1', '5240', 1099, 50, 'Z'], #Kvilldal load
-            # ['L5240-2', '5240', 637, 50, 'Z'], #VSC #Is this the HVDC transmission cable that goes from Kvilldal to England that is modeled as a SVC? No, think it's modeled further down.
+            ['L5240-2', '5240', 637, 50, 'Z'], #VSC #Is this the HVDC transmission cable that goes from Kvilldal to England that is modeled as a SVC? No, think it's modeled further down.
             ['L5270-1', '5270', 461.2, 50, 'Z'],
             ['L5310-1', '5310', 773, 250, 'Z'],
             ['L5320-1', '5320', 778.6, 250, 'Z'],
