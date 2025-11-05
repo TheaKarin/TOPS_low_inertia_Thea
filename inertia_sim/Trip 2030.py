@@ -12,7 +12,7 @@ if __name__ == '__main__':
     #The fault is a reversal of power flow on the cable, which leads to a fault of 1675MW. 
     import init_N45 as init
     import fault_events as fault
-    import tops.ps_models.n45_2_0 as n45
+    import tops.ps_models.copy2_n45_2_0 as n45
 
     '''
     The energy mix for the different countries in the Nordic 45 system is defined below.
@@ -73,7 +73,7 @@ if __name__ == '__main__':
     The function simulates a fault on the NorLink cable and stores the results in the specified folder and filename as a .json file.
     There has to be a folder with the same name as the first part of folderandfilename in the Results folder.
     '''
-    fault.HVDC_cable_trip(ps=ps,folderandfilename = 'SC/base_case_Nordlink_withL2',
+    fault.HVDC_cable_trip(ps=ps,folderandfilename = 'SC/my_case_Nordlink_NewQ',
                             event_flag=True)
     #fault.HVDC_cable_trip(ps=ps,folderandfilename = 'Frequency support from Wind activation time/49.5Hz activation_II', 
                              #event_flag=True, 
