@@ -45,7 +45,7 @@ def load():
             ['5230', 420, 12, 1.0000], #Skal flytte slik at linjene dens kobles til 5245
             ['5231', 300, 12, 0.9994],
             ['5240', 420, 12, 1.0000], #Kvilldal bus
-            ['5245', 420, 12, 0.9803], # NY!!! Vet IKKE hvorfor jeg velger denne V_0.
+            ['5245', 420, 12, 1.0000], # NY!!! Vet IKKE hvorfor jeg velger denne V_0.
             ['5250', 300, 12, 1.0000], #Skal flytte slik at linjen dens kobler til 5245
             ['5260', 300, 12, 0.9971],
             ['5270', 300, 12, 0.9937],
@@ -188,7 +188,7 @@ def load():
             # ['L5230-1', '5230', 1436, 50, 'Z'], #VSC
             ['L5231-1', '5231', 1099, 50, 'Z'],
             ['L5240-1', '5240', 1099, 50, 'Z'], #Kvilldal load
-            ['L5240-2', '5240', 1300, 50, 'Z'], #VSC #Is this the HVDC transmission cable that goes from Kvilldal to GB?
+            #['L5240-2', '5240', 1300, 50, 'Z'], #VSC #Is this the HVDC transmission cable that goes from Kvilldal to GB?
             ['L5270-1', '5270', 461.2, 50, 'Z'],
             ['L5310-1', '5310', 773, 250, 'Z'],
             ['L5320-1', '5320', 778.6, 250, 'Z'],
@@ -492,7 +492,7 @@ def load():
             'VSC_SI': [
                 # HVDC VSCs
                 ['name',    'bus',    'S_n',   'p_ref',     'q_ref',    'k_p',   'k_q',   'T_p',   'T_q',     'k_pll',    'T_pll',     'T_i',    'i_max',   'K_SI',    'T_SI',    'P_SI_max'],
-                ['NO_2-GB', '5240',    1400,     0,         0,           1,      1,        0.05,     0.05,         5,          0.1,         0.01,      1.2,        0,        0.1,       0.1], #HVDC from Norway to Great Britain
+                ['NO_2-GB', '5240',    1400,     1000,         0,           1,      1,        0.05,     0.05,         5,          0.1,         0.01,      1.2,        0,        0.1,       0.1], #HVDC from Norway to Great Britain
                 ['NO_2-DE', '5230',    1400,     0,         0,           1,      1,        0.05,     0.05,         5,          0.1,         0.01,      1.2,        0,        0.1,       0.1],
                 ['SE_4-LT', '8700',    700,      0,         0,           1,      1,        0.05,     0.05,         5,          0.1,         0.01,      1.2,        0,        0.1,       0.1],
                 ['FI-EE',   '7020',    1000,     0,         0,           1,      1,        0.05,     0.05,         5,          0.1,         0.01,      1.2,        0,        0.1,       0.1],

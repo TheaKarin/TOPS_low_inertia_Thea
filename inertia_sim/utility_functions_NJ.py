@@ -103,7 +103,7 @@ def plot_gen_power(results, file_names, gen_name=None):
         else:
             for gen in res['gen_name']:
                 plt.plot(res['t'], np.array(res['gen_P'])[:, res['gen_name'].index(gen)], label=gen)
-    plt.xlim(10, max(res['t']))  # Start x-axis at 10s
+    plt.xlim(0, max(res['t']))  # Start x-axis at 10s
     plt.xlabel('Time [s]')
     plt.ylabel('Power [MW]')
     plt.grid()
@@ -471,7 +471,7 @@ def plot_voltage(results, file_names, bus_name=None):
         else:
             for bus in res['bus_names'][0]:
                 plt.plot(res['t'], np.array(res['v'])[:, res['bus_names'][0].index(bus)], label=bus)
-    plt.xlim(10, max(res['t']))  # Start x-axis at 10s
+    plt.xlim(0, max(res['t']))  # Start x-axis at 10s
     plt.xlabel('Time [s]')
     plt.ylabel('Voltage [p.u.]')
     plt.grid()
@@ -548,7 +548,7 @@ def plot_line_p(results, file_names, line_name):
             plt.plot(res['t'], np.array(res['line_P'])[:, idx]*base_mva, label=line_name + ' ' + file_names[it].stem)
             it += 1
     
-    plt.xlim(10, 20)  # Start x-axis at 10s
+    plt.xlim(0, 10)  # Start x-axis at 10s
     plt.xlabel('Time [s]')
     plt.ylabel('Power [MW]')
     
